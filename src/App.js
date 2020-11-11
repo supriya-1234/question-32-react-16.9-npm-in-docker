@@ -6,9 +6,11 @@ function App() {
   const [value1, setValue1] = useState("");
   const [value2, setValue2] = useState("");
   const [result, setResult] = useState(value1 + value2);
+  const bool = true;
   const handleClick = () => {
     setResult(value1 + value2);
   };
+
   return (
     <>
       <label>Enter First Number</label>
@@ -25,8 +27,10 @@ function App() {
         id="Text2"
         onChange={(e) => setValue2(+e.target.value)}
       />
-      <div id="text">Result:{result}</div>
-      <button onClick={handleClick}>Display Result</button>
+      <div id="txtresult">Result:{result}</div>
+      <button name="clickbtn" onClick={handleClick} disabled={!bool}>
+        Display Result
+      </button>
     </>
   );
 }
