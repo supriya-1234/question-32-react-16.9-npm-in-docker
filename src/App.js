@@ -12,7 +12,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="App">
       <label>Enter First Number</label>
       <input
         type="number"
@@ -20,6 +20,7 @@ function App() {
         id="Text1"
         onChange={(e) => setValue1(+e.target.value)}
       />
+      <br />
       <label>Enter Second Number</label>
       <input
         type="number"
@@ -27,11 +28,13 @@ function App() {
         id="Text2"
         onChange={(e) => setValue2(+e.target.value)}
       />
+      <br />
       <div id="txtresult">Result:{result}</div>
+      <br />
       <button name="clickbtn" onClick={handleClick} disabled={!bool}>
         Display Result
       </button>
-    </>
+    </div>
   );
 }
 
