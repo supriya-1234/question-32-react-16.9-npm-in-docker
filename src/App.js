@@ -6,9 +6,9 @@ function App() {
   const [value1, setValue1] = useState("");
   const [value2, setValue2] = useState("");
   const [result, setResult] = useState(value1 + value2);
-  const bool = true;
+
   const handleClick = () => {
-    if (value1 !== "" && value2 !== "") setResult(value1 + value2);
+    setResult(value1 + value2);
   };
 
   return (
@@ -31,7 +31,11 @@ function App() {
       <br />
       <div id="txtresult">Result:{result}</div>
       <br />
-      <button name="clickbtn" onClick={handleClick} disabled={!bool}>
+      <button
+        name="clickbtn"
+        onClick={handleClick}
+        disabled={value1 !== "" && value2 !== "" ? false : true}
+      >
         Display Result
       </button>
     </div>
