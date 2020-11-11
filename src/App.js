@@ -8,7 +8,7 @@ function App() {
   const [result, setResult] = useState(value1 + value2);
   const bool = true;
   const handleClick = () => {
-    setResult(value1 + value2);
+    if (value1 !== "" && value2 !== "") setResult(value1 + value2);
   };
 
   return (
