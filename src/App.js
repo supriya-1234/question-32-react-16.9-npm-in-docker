@@ -29,7 +29,7 @@ function App() {
         onChange={(e) => setValue2(+e.target.value)}
       />
       <br />
-      <div id="txtresult">Result:{result}</div>
+      Result: <div id="txtresult">{result}</div>
       <br />
       <button
         name="clickbtn"
