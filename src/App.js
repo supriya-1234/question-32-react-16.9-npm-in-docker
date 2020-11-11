@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import "./App.css";
 
 function App() {
+  const [value1, setValue1] = useState("");
+  const [value2, setValue2] = useState("");
+  const [result, setResult] = useState(value1 + value2);
+  const handleClick = () => {
+    setResult(value1 + value2);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <label>Enter First Number</label>
+      <input
+        type="number"
+        value={value1}
+        id="Text1"
+        onChange={(e) => setValue1(+e.target.value)}
+      />
+      <label>Enter Second Number</label>
+      <input
+        type="number"
+        value={value2}
+        id="Text2"
+        onChange={(e) => setValue2(+e.target.value)}
+      />
+      <div id="text">Result:{result}</div>
+      <button onClick={handleClick}>Display Result</button>
+    </>
   );
 }
 
